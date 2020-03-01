@@ -4,205 +4,14 @@ Javascript
 
 ### Snapshot
 
-![](https://github.com/geraldgsh/weather-app/blob/master/img/ami.screenshot.JPG)
+![]()
 
 ### Introduction.
-The Weather App project comes at the end of the Asynchronous Javascript and APIs section of the Javascript course. It tests the knowledge of the student about asynchronous communication with promises or async/await and when to use them.
 
-You can find the original project specification at: https://www.theodinproject.com/courses/javascript/lessons/weather-app
 
 ### Project Objectives
 
-Use everything we’ve been discussing to create a weather forecast site using the weather API from the previous lesson. You should be able to search for a specific location and toggle displaying the data in Fahrenheit or Celsius.
 
-You should change the look of the page based on the data, maybe by changing the color of the background or by adding images that describe the weather. (You could even use the Giphy API to find appropriate weather-related gifs and display them). Feel free to use promises or async/await in your code, though you should try to become comfortable with both.
-
-1. Set up a blank HTML document with the appropriate links to your JavaScript and CSS files.
-```html
-<!DOCTYPE html>
-<html lang='en'>
-<head>
-<title>Weather APP</title>
-<meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" rel="stylesheet">
-  <link href='style.css' rel='stylesheet'>
-</head>
-<body>
-  <nav id="level" class="level">
-    <div class="level-item has-text-centered">
-      <div>
-        <h3 class="title is-3">Weather APP</h3>
-      </div>
-    </div>
-    <div class="level-item has-text-centered rows">
-      <div class="row">
-        <div class="field has-addons">
-          <div class="control">
-            <input id="cityInput" class="input" type="text" placeholder="city">
-          </div>
-          <div class="control">
-            <a id="citySearch" class="button is-info">
-              Search
-            </a>
-          </div>
-        </div>	
-        <div class="field">
-          <button id="unit" class="is-primary button is-rounded">Celsius</button>
-          <button id="clearAll" class="is-danger button is-rounded">Clear All</button>
-        </div>
-      </div>
-    </div>	
-    <div id="localWeather" class="level-item has-text-centered">
-    </div>
-  </nav>
-  <section class="container">
-    <div class="card-container" id="list">
-    </div>
-  </section>
-</body>
-<script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
-<script src="main.js"></script>
-</script>
-</html>
-```
-
-2. Write the functions that hit the API. You’re going to want functions that can take a location and return the weather data for that location. For now, just console.log() the information.
-```sh
-List of functions and eventlisteners
-
-start()
-function toggle()
-const toggleTime
-const purge
-
-const localCelsius = (tempLocal)
-const localFahrenheit = (tempLocal)
-const renderLocalCard = (localCity, localIcon)
-const fetchLocalCityWeather = (cityName, unit)
-const fetchLocalCityName = (unit = 'metric')
-
-const updateLocalStorage = (arr)
-const foreignCelsiusTemp = (mainTemp, id)
-const foreignFahrenheitTemp = (mainTemp, id)
-const foreignCelsiusFeel = (feel, id)
-const foreignFahrenheitFeel = (feel, id)
-const foreignCelsiusMin = (min, id)
-const foreignFahrenheitMin = (min, id)
-const foreignCelsiusMax = (max, id)
-const foreignFahrenheitMax = (max, id)
-const getflickrImg = (foreignCityName, id)
-const getSunrise = (timezone, sunrise, id)
-const getSunset = (timezone, sunset, id)
-const renderForeignCard = (description, foreignIcon, foreignPressure, humidity, windSpeed, timezone, name, id)
-const fetchForeignCityWeather = (cityName, id, unit = 'metric')
-const toggleRender = (unit)
-const addCityToList = (cityName)
-const checkCity = (cityInput)
-const findCity = ()
-const citySearch = (()
-```
-
-
-3. Write the functions that process the JSON data you’re getting from the API and return an object with only the data you require for your app.
-```sh
-See above
-```
-
-Set up a simple form that will let users input their location and will fetch the weather info (still just console.log() it).
-```html
-<div class="control">
-  <input id="cityInput" class="input" type="text" placeholder="city">
-</div>
-<div class="control">
-  <a id="citySearch" class="button is-info">
-    Search
-  </a>
-</div>
-```
-          
-4. Display the information on your webpage!
-```sh
-```
-
-5. Add any styling you like!
-
-```css
-html,
-body {
-  font-family: 'Titillium Web', sans-serif;  
-  background: url(https://lh3.googleusercontent.com/p/AF1QipOWQOnc5H1KaoL3RA5dV1Vvn75adsXwlCG52KP_=s1600-w1600) no-repeat center center fixed;
-  background-size: cover;
-  color: white; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;  
-  min-height: 100vh;  
-  text-shadow: 2px 2px black;
-}
-
-.title {
-  color:white;
-  text-shadow: 2px 2px black;
-}
-
-.field {
-  padding-left: 10px;
-}
-
-.level {
-  height: 180px;
-}
-
-.card-container{
-  display: grid;  
-	grid-template-columns: repeat(auto-fill, minmax(380px,6fr));
-  grid-gap: 1em;
-}
-
-.card{
-  color: white;
-  background-color: rgba(0, 0, 0, 0.3);
-  height: max-content;
-}
-
-.card-header {
-  background-color: rgb(0, 0, 0, 0.3);
-  height: 150px;  
-}
-
-.right-col {
-  background-color: rgba(0, 0, 0, 0);
-}
-
-.card-content {
-  background-color: rgb(0, 0, 0, 0.3);
-}
-
-#cityImage {
-  height: 150px;
-  padding:0;
-  margin:0;
-  width: 218px;  
-}
-
-#cityImage img {
-  border: none;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
-
-@media only screen and (max-width: 768px) {
-  #localWeather {
-    display: none;
-  }
-}
-```
 
 ### Linter Setup
 
@@ -473,25 +282,16 @@ Entrypoint main = main.js
     | ./src/modules/localControl.js 1.6 KiB [built]
 ```
 
-#### Steps to publish Page to Githack
+#### Testing practice
 
-1. Navigate to "dist/index.html" on GitHub Page Repo then copy URL (step #1) as illustrated below
-
-![](https://github.com/geraldgsh/restaurant-page/blob/development/dist/media/Github-index.jpg?raw=true)
-
-2. Go to https://raw.githack.com/, paste GitHub directory into input box (step #2) to generate URL (step #3) illustrated below.
-
-![](https://github.com/geraldgsh/restaurant-page/blob/development/dist/media/githack.jpg?raw=true)
-
-#### Weather APP
-This is a weather app built with Bulma, Webpack, Bootstrap, JS, CSS & HTML.
+This is a weather app built with babel & JS.
 
 ### Wiki
 
-Checkout our [wikipage](https://github.com/geraldgsh/weather-app/wiki) for more details. 
+Checkout our [wikipage](https://github.com/geraldgsh/testing-practice-js/wiki) for more details. 
 
 #### Live Demo
-[Demo](https://rawcdn.githack.com/geraldgsh/weather-app/64d18f01c9e4f1bfda310899c965565f47bcba4b/dist/index.html)
+None
 
 #### Getting Started
 Clone repo and run index.html
@@ -500,10 +300,10 @@ Clone repo and run index.html
 Web browser like Chrome, Mozilla or similar.
 
 ### Original Project Source
-https://www.theodinproject.com/courses/javascript/lessons/weather-app
+https://www.theodinproject.com/courses/javascript/lessons/testing-practice
 
 ### Github Repo
-https://github.com/geraldgsh/weather-app
+https://github.com/geraldgsh/testing-practice-js
 
 
 👤 **Author**
@@ -517,7 +317,7 @@ Linkedin: [Gerald Goh](https://www.linkedin.com/geraldgsh)
 ## 🤝 Contributing
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/geraldgsh/weather-app/issues).
+Feel free to check the [issues page](https://github.com/geraldgsh/testing-practice-js/issues).
 
 ## Show your support
 
