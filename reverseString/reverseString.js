@@ -1,5 +1,5 @@
 /* eslint-disable linebreak-style */
-/*eslint arrow-body-style: ["error", "always"]*/
+/* eslint-disable arrow-body-style */
 
 const reverseString = (string) => {
   return string.split('').reverse().join('');
