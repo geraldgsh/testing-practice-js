@@ -1,3 +1,7 @@
+# Note to TSE
+
+Student success have granted me permission to work alone. 
+
 # Microverse Project Title - Testing Practice
 [Collaborative  Project]
 Javascript
@@ -18,14 +22,34 @@ Write tests for the following functions, and then make the tests pass!
 
 1. capitalize(string) takes a string and returns that string with the first character capitalized.
 ```javascript
+./capitalize/capitalize.js
+
+const capitalize = (string) => {
+  return string.charAt(0).toUpperCase() + string.substring(1);
+}
 ```
 
 2. reverseString(string) takes a string and returns it reversed.
 ```javascript
+.reserveString/reverseString.js
+
+const capitalize = (string) => {
+  return string.charAt(0).toUpperCase() + string.substring(1);
+}
 ```
 
 3. A calculator object that contains the basic operations: add, subtract, divide, and multiply.
 ```javascript
+.calculator/calculator.js
+
+const calculator = {
+	
+  add(a, b)
+  subtract(a, b)
+  divide(a, b)
+  multiply
+};
+
 ```
 
 4. Caesar Cipher. [Read about it on this website](http://practicalcryptography.com/ciphers/caesar-cipher/)
@@ -34,6 +58,15 @@ a. Don’t forget to test wrapping from z to a.
 b. Don’t forget to test keeping the same case.
 c. Don’t forget to test punctuation!
 d. For this one, you may want to split the final function into a few smaller functions. One concept of Testing is that you don’t need to explicitly test every function you write… Just the public ones. So in this case you only need tests for the final caesar() function. If it works as expected you can rest assured that your smaller helper functions are doing what they’re supposed to.
+
+```javscript
+./caesarCipher/caesarCipher.js
+
+const caesarCipher = (string, move) => {
+.
+.
+}
+```
 
 5. Array Analysis. Write a function that takes an array of numbers and returns an object with the following properties: average, min, max, and length.
 ```javascript
@@ -206,6 +239,27 @@ added 232 packages from 28 contributors, removed 108 packages, updated 589 packa
   run `npm fund` for details
 
 found 0 vulnerabilities
+
+##### Run jest test
+
+```
+
+$ npm test
+
+> testing-practice@1.0.0 test /mnt/d/Google_Drive/Microverse/5.Javascript/6.testing/testing-practice-js
+> jest
+
+ PASS  capitalize/capitalize.test.js
+ PASS  reverseString/reverseString.test.js
+ PASS  arrayAnalysis/arrayAnalysis.test.js
+ PASS  calculator/calculator.test.js
+ PASS  ceasarCipher/caesarCipher.test.js
+
+Test Suites: 5 passed, 5 total
+Tests:       14 passed, 14 total
+Snapshots:   0 total
+Time:        3.607s
+Ran all test suites.
 ```
 
 Edit test;

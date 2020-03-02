@@ -1,5 +1,5 @@
-const reverseString = (string) => {
-	return string.split('').reverse().join('');
-};
+/* eslint-disable linebreak-style */
+
+const reverseString = (string) => string.split('').reverse().join('');
 
 module.exports = reverseString;
