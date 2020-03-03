@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 /* eslint-disable arrow-body-style */
 
 const reverseString = (string) => {

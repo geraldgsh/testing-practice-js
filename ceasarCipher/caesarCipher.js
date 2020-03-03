@@ -1,5 +1,3 @@
-/* eslint-disable linebreak-style */
-
 const caesarCipher = (string, move) => {
   let cipher = '';
   for (let i = 0; i < string.length; i += 1) {

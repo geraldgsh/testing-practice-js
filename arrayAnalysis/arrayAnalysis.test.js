@@ -1,5 +1,3 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable no-undef */
 const arrayAnalysis = require('./arrayAnalysis');
 
 const object = arrayAnalysis([1, 8, 3, 4, 2, 6]);

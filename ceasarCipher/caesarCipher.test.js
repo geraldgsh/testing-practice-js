@@ -1,6 +1,3 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable no-undef */
-
 const caesarCipher = require('./caesarCipher');
 
 test('Returns cipher at 1 letter ahead', () => {

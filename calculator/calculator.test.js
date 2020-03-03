@@ -1,6 +1,3 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable no-undef */
-
 const calculator = require('./calculator');
 
 test('Return result of addition', () => {
