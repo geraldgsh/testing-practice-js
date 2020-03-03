@@ -1,7 +1,3 @@
-# Note to TSE
-
-Student success have granted me permission to work alone. 
-
 # Microverse Project Title - Testing Practice
 [Collaborative  Project]
 Javascript
