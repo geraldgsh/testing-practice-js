@@ -14,6 +14,67 @@ You can find the original project specification at: https://www.theodinproject.c
 
 ### Project Objectives
 
+Write tests for the following functions, and then make the tests pass!
+
+1. capitalize(string) takes a string and returns that string with the first character capitalized.
+```javascript
+./capitalize/capitalize.js
+
+const capitalize = (string) => {
+  return string.charAt(0).toUpperCase() + string.substring(1);
+}
+```
+
+2. reverseString(string) takes a string and returns it reversed.
+```javascript
+.reserveString/reverseString.js
+
+const capitalize = (string) => {
+  return string.charAt(0).toUpperCase() + string.substring(1);
+}
+```
+
+3. A calculator object that contains the basic operations: add, subtract, divide, and multiply.
+```javascript
+.calculator/calculator.js
+
+const calculator = {
+	
+  add(a, b)
+  subtract(a, b)
+  divide(a, b)
+  multiply
+};
+
+```
+
+4. Caesar Cipher. [Read about it on this website](http://practicalcryptography.com/ciphers/caesar-cipher/)
+
+a. Don’t forget to test wrapping from z to a.
+b. Don’t forget to test keeping the same case.
+c. Don’t forget to test punctuation!
+d. For this one, you may want to split the final function into a few smaller functions. One concept of Testing is that you don’t need to explicitly test every function you write… Just the public ones. So in this case you only need tests for the final caesar() function. If it works as expected you can rest assured that your smaller helper functions are doing what they’re supposed to.
+
+```javscript
+./caesarCipher/caesarCipher.js
+
+const caesarCipher = (string, move) => {
+.
+.
+}
+```
+
+5. Array Analysis. Write a function that takes an array of numbers and returns an object with the following properties: average, min, max, and length.
+```javascript
+const object = analyze([1,8,3,4,2,6]);
+
+object == {
+  average: 4,
+  min: 1,
+  max: 8,
+  length: 6
+};
+```
 
 
 ### Linter Setup
@@ -61,41 +122,40 @@ Use `npm install <pkg>` afterwards to install a package and
 save it as a dependency in the package.json file.
 
 Press ^C at any time to quit.
-package name: (weather-app)
+package name: (testing-practice)
 version: (1.0.0)
-description: Weather Application
-entry point: (webpack.config.js) src/index.js
-test command:
-git repository: (https://github.com/geraldgsh/weather-app.git)
 keywords:
 author: Gerald Goh
 license: (ISC)
-About to write to /mnt/d/Google_Drive/Microverse/5.Javascript/5.API/weather-app/package.json:
+About to write to /mnt/d/Google_Drive/Microverse/5.Javascript/6.testing/testing-practice-js/package.json:
 
 {
-  "name": "weather-app",
+  "name": "testing-practice",
   "version": "1.0.0",
-  "description": "Weather Application",
-  "main": "src/index.js",
+  "description": "[Collaborative  Project]\r Javascript",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/geraldgsh/weather-app.git"
+    "url": "git+https://github.com/geraldgsh/testing-practice-js.git"
   },
   "author": "Gerald Goh",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/geraldgsh/weather-app/issues"
+    "url": "https://github.com/geraldgsh/testing-practice-js/issues"
   },
-  "homepage": "https://github.com/geraldgsh/weather-app#readme"
+  "homepage": "https://github.com/geraldgsh/testing-practice-js#readme"
 }
+
+
+Is this OK? (yes) yes
 ```
 
 Command above will generate a "package.json" file for ESlint work off from.
 
-Install ESlint with following command
+##### Install ESlint
 
 ```sh
 $ npm install eslint
@@ -122,168 +182,104 @@ $ eslint --init
 ? Which style guide do you want to follow? Airbnb: https://github.com/airbnb/javascript
 ? What format do you want your config file to be in? JSON
 Checking peerDependencies of eslint-config-airbnb-base@latest
-Local ESLint installation not found.
 The config that you've selected requires the following dependencies:
 
 eslint-config-airbnb-base@latest eslint@^5.16.0 || ^6.1.0 eslint-plugin-import@^2.18.2
-? Would you like to install them now with npm? Yes
-Installing eslint-config-airbnb-base@latest, eslint@^5.16.0 || ^6.1.0, eslint-plugin-import@^2.18.2
-npm notice save eslint is being moved from dependencies to devDependencies
-+ eslint-config-airbnb-base@14.0.0
-+ eslint@6.8.0
-+ eslint-plugin-import@2.20.1
-added 61 packages from 37 contributors, updated 1 package and audited 387 packages in 8.597s
-
-16 packages are looking for funding
-  run `npm fund` for details
-
-found 0 vulnerabilities
-
-Successfully created .eslintrc.json file in 
-/weather-app
-ESLint was installed locally. We recommend using this local copy instead of your globally-installed copy.
+? Would you like to install them now with npm? No
+Successfully created .eslintrc.json file in /mnt/d/Google_Drive/Microverse/5.Javascript/6.testing/testing-practice-js
 ```
 
-with the following setup;
-
-`? How would you like to use ESLint?` To check syntax, find problems, and enforce code style
-
-`? What type of modules does your project use?` JavaScript modules (import/export)
-
-`? Which framework does your project use?` None of these
-
-`? Does your project use Typescript` No
-
-`? Where does your code run?` Browser
-
-`? How would you like to define a style for your project?` Use a popular style guide
-
-`? Which style guide do you want to follow?` Airbnb
-
-`? What format do you want your config file to be in?` JSON
-
-`? The config that you've selected requires the following dependencies: Would you like to install them now with npm?` Yes
-
-Start ESlint with this command.
+Run ESlint
 
 ```sh
 eslint script.js
 ```
 
-#### Setup Webpack watch
+##### Install Jest
 
-Install webpack;
+```javascript
+$ npm install --save-dev jest
+npm WARN deprecated request@2.88.2: request has been deprecated, see https://github.com/request/request/issues/3142
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.1.2 (node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.1.2: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
 
-```sh
-$ npm install webpack webpack-cli --save-dev
-npm WARN rollback Rolling back readable-stream@2.3.6 failed (this is probably harmless): EINVAL: invalid argument, lstat '/mnt/d/Google_Drive/Microverse/5.Javascript/4.oop/todo-list/node_modules/fsevents/node_modules'
-npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.11 (node_modules/fsevents):
-npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.11: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
++ jest@25.1.0
+added 537 packages from 248 contributors, removed 4 packages and audited 1204208 packages in 39.256s
 
-+ webpack@4.41.6
-+ webpack-cli@3.3.11
-added 360 packages from 209 contributors, removed 10 packages and audited 5675 packages in 20.445s
-
-20 packages are looking for funding
+29 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 ```
 
-Now we'll create the following directory structure, files and their contents:
+Finally, run yarn test or npm run test and Jest will print this message:
 
-Create;
-./webpack.config.js
-
-```javascript
-const path = require('path');
-
-module.exports = {
-  mode: 'production',
-  entry: './src/index.js',
-  output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, 'dist'),
-  },
-  module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader',
-        ],
-      },
-      {
-        test: /\.(png|svg|jpg|gif|jpeg)$/,
-        use: [
-          'file-loader',
-        ],
-      },
-    ],
-  },
-};
+```sh
+PASS  ./sum.test.js
+✓ adds 1 + 2 to equal 3 (5ms)
 ```
 
-Webpack can watch files and recompile whenever they change. Turn on watch mode. This means that after the initial build, webpack will continue to watch for changes in any of the resolved files.
+##### Install Babel
 
-```javascript
+Install the @babel/preset-env package;
+
+```sh
+$ npm i -D @babel/preset-env
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.1.2 (node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.1.2: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+
++ @babel/preset-env@7.8.6
+added 232 packages from 28 contributors, removed 108 packages, updated 589 packages and audited 1208996 packages in 54.596s
+
+31 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+##### Run jest test
+
+```
+
+$ npm test
+
+> testing-practice@1.0.0 test /mnt/d/Google_Drive/Microverse/5.Javascript/6.testing/testing-practice-js
+> jest
+
+ PASS  capitalize/capitalize.test.js
+ PASS  reverseString/reverseString.test.js
+ PASS  arrayAnalysis/arrayAnalysis.test.js
+ PASS  calculator/calculator.test.js
+ PASS  ceasarCipher/caesarCipher.test.js
+
+Test Suites: 5 passed, 5 total
+Tests:       14 passed, 14 total
+Snapshots:   0 total
+Time:        3.607s
+Ran all test suites.
+```
+
+Edit test;
+
+```sh
 ./package.json
 
 {
-  "name": "weather-app",
+  "name": "testing-practice",
   "version": "1.0.0",
-  "description": "Weather APP",
-  "main": "src/index.js",
+  "description": "[Collaborative  Project]\r Javascript",
+  "main": "index.js",
   "scripts": {
-    "build": "webpack --mode development",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "webpack --watch"
+    "test": "jest"
   },
-  .
-  .
+.
+.
 ```
 
-Run "yarn build"
-
+Create a .babelrc file in the project’s root with the following lines of code:
 ```javascript
-$ yarn build
-yarn run v1.21.1
-$ webpack --mode development
-Hash: 87bba94788336242806f
-Version: webpack 4.41.6
-Time: 102ms
-Built at: 02/21/2020 5:33:18 AM
-  Asset      Size  Chunks             Chunk Names
-main.js  12.3 KiB    main  [emitted]  main
-Entrypoint main = main.js
-[./src/index.js] 1.23 KiB {main} [built]
-[./src/modules/DOMControl.js] 3.12 KiB {main} [built]
-[./src/modules/localControl.js] 1.6 KiB {main} [built]
-Done in 2.67s.
+{ "presets": ["@babel/preset-env"] }
 ```
 
-Or run "yarn watch" to start.
-```javascript
-$ yarn watch
-
-yarn run v1.21.1
-$ webpack --watch
-
-webpack is watching the files…
-
-Hash: c1487def981e257fe947
-Version: webpack 4.41.6
-Time: 392ms
-Built at: 02/21/2020 5:34:39 AM
-  Asset      Size  Chunks             Chunk Names
-main.js  1.55 KiB       0  [emitted]  main
-Entrypoint main = main.js
-[0] ./src/index.js + 2 modules 5.96 KiB {0} [built]
-    | ./src/index.js 1.23 KiB [built]
-    | ./src/modules/DOMControl.js 3.12 KiB [built]
-    | ./src/modules/localControl.js 1.6 KiB [built]
-```
 
 #### Testing practice
 
