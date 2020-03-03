@@ -283,7 +283,7 @@ Create a .babelrc file in the project’s root with the following lines of code:
 
 #### Testing practice
 
-This is a weather app built with babel & JS.
+This is a testing app built with babel & JS.
 
 ### Wiki
 
