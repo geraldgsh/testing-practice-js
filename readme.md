@@ -223,6 +223,8 @@ PASS  ./sum.test.js
 
 Install the @babel/preset-env package;
 
+The current version of Jest as it is does not recognize the import statement. In order for you to be able to use ES6 modules for this project you may do the following:
+
 ```sh
 $ npm i -D @babel/preset-env
 npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.1.2 (node_modules/fsevents):
@@ -236,13 +238,20 @@ added 232 packages from 28 contributors, removed 108 packages, updated 589 packa
 
 found 0 vulnerabilities
 
+
+Create a .babelrc file in the project’s root with the following lines of code:
+
+```javascript
+{ "presets": ["@babel/preset-env"] }
+```
+
 ##### Run jest test
 
 ```
 
 $ npm test
 
-> testing-practice@1.0.0 test /mnt/d/Google_Drive/Microverse/5.Javascript/6.testing/testing-practice-js
+> testing-practice@1.0.0 test ../testing-practice-js
 > jest
 
  PASS  capitalize/capitalize.test.js
@@ -274,12 +283,6 @@ Edit test;
 .
 .
 ```
-
-Create a .babelrc file in the project’s root with the following lines of code:
-```javascript
-{ "presets": ["@babel/preset-env"] }
-```
-
 
 #### Testing practice
 
