@@ -295,9 +295,6 @@ Checkout our [wikipage](https://github.com/geraldgsh/testing-practice-js/wiki) f
 #### Live Demo
 None
 
-#### Getting Started
-Clone repo and run index.html
-
 #### Prerequisites
 Web browser like Chrome, Mozilla or similar.
 
